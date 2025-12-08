@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>柔らかい世界</title>
+    <title>優しい世界</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -12,10 +12,9 @@
   <body class="bg-gray-50 min-h-screen">
     <header class="bg-white border-b">
       <div class="max-w-4xl mx-auto flex items-center justify-between p-4">
-        <%= link_to "柔らかい世界", root_path, class: "text-lg font-semibold" %>
+        <%= link_to "優しい世界", root_path, class: "text-lg font-semibold" %>
 
         <nav class="flex items-center gap-4 text-sm">
-          <%= link_to "掲示板を作る", new_board_path, class: "px-3 py-1 rounded bg-indigo-600 text-white" %>
           <% if user_signed_in? %>
             <span>こんにちは、<%= current_user.email %></span>
             <%= link_to "ログアウト", destroy_user_session_path, data: { turbo_method: :delete }, class: "underline" %>

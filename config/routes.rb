@@ -1,7 +1,11 @@
 Rails.application.routes.draw do
   devise_for :users
 
-  root "boards#index"
+  authenticated :user do
+    root "boards#index", as: :authenticated_root
+  end
+
+  root "pages#landing"
 
   resources :boards do
     resources :posts, only: [ :create, :destroy ]

@@ -1,0 +1,110 @@
+<div class="bg-gradient-to-b from-indigo-50 via-white to-slate-50 text-slate-900">
+  <div class="max-w-5xl mx-auto px-4 md:px-6 lg:px-8 py-14 space-y-16">
+
+    <!-- Hero -->
+    <section class="space-y-8">
+      <p class="inline-flex items-center gap-2 px-3 py-1 text-lg font-semibold bg-indigo-100 text-indigo-700 rounded-full">優しい世界へようこそ</p>
+      <div class="space-y-8">
+        <div class="space-y-6">
+          <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight">人の言葉をまるごと<br class="hidden sm:block" />やさしく包み込む掲示板</h1>
+          <p class="text-lg text-slate-600">原文と優しい文をワンタップで切り替え。読む人の気持ちに寄り添うトーンで、安心してやり取りできる場所をつくります。</p>
+    
+          <div class="flex gap-6 text-sm text-slate-600">
+            <div>
+              <p class="text-2xl font-bold text-indigo-700">10秒</p>
+              <p>投稿をやさしく<br />変換する所要時間</p>
+            </div>
+            <div>
+              <p class="text-2xl font-bold text-indigo-700">2モード</p>
+              <p>原文 / 優しい文</p>
+            </div>
+            <div>
+              <p class="text-2xl font-bold text-indigo-700">無料</p>
+              <p>今すぐ試せます</p>
+            </div>
+          </div>
+        </div>
+        <div class="relative">
+          <div class="absolute -inset-4 bg-gradient-to-r from-indigo-200/70 to-blue-100/70 blur-3xl rounded-full"></div>
+          <div class="relative p-6 bg-white border border-indigo-50 rounded-2xl shadow-xl space-y-4" data-controller="preview-mode">
+            <div class="flex items-center justify-between">
+              <div>
+                <p class="text-lg font-semibold">プレビュー</p>
+                <p class="text-sm text-slate-500">原文 ⇔ 優しい世界</p>
+              </div>
+              <span class="px-3 py-1 text-xs font-semibold bg-indigo-100 text-indigo-700 rounded-full">AI整形</span>
+            </div>
+            <div class="space-y-3 text-sm text-slate-700">
+              <div class="p-3 bg-slate-50 rounded-lg border border-slate-100" data-preview-mode-target="original">
+                <p class="text-xs text-slate-500 mb-1">原文</p>
+                <p>あの上司ほんとにムカつく。言ってること意味不明だし。</p>
+              </div>
+              <div class="p-3 bg-indigo-50 rounded-lg border border-indigo-100 hidden" data-preview-mode-target="gentle">
+                <p class="text-xs text-indigo-600 mb-1">優しい世界</p>
+                <p>あの上司の言っていることは、少し分かりづらいところがあるかもしれませんね。時々、イライラする気持ちも理解できます。</p>
+              </div>
+            </div>
+            <div class="flex gap-2">
+              <button class="px-4 py-2 text-xs font-semibold rounded bg-indigo-600 text-white shadow hover:bg-indigo-700 transition" data-preview-mode-target="originalBtn" data-action="preview-mode#showOriginal">原文モード</button>
+              <button class="px-4 py-2 text-xs font-semibold rounded border border-slate-200 text-slate-700 hover:bg-slate-100 transition" data-preview-mode-target="gentleBtn" data-action="preview-mode#showGentle">優しい世界モード</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Features stacked -->
+    <section class="space-y-4">
+      <p class="text-sm font-semibold text-indigo-700">できること</p>
+      <div class="space-y-4">
+        <div class="p-5 bg-white border border-slate-100 rounded-xl shadow-sm space-y-2">
+          <h3 class="text-lg font-semibold">AIでやさしく整形</h3>
+          <p class="text-sm text-slate-600">OpenAI APIで文章をていねいに言い換え。投稿者の意図を保ちながら、読み手に配慮したトーンを自動生成します。</p>
+        </div>
+        <div class="p-5 bg-white border border-slate-100 rounded-xl shadow-sm space-y-2">
+          <h3 class="text-lg font-semibold">原文/優しい世界を即切替</h3>
+          <p class="text-sm text-slate-600">ボタンひとつで表示をトグル。読む人の好みに合わせたビューをいつでも選べます。</p>
+        </div>
+        <div class="p-5 bg-white border border-slate-100 rounded-xl shadow-sm space-y-2">
+          <h3 class="text-lg font-semibold">認証・管理も安心</h3>
+          <p class="text-sm text-slate-600">Deviseでユーザー管理。掲示板の作成・編集・削除もシンプルで迷いません。</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Steps vertical -->
+    <section class="space-y-6">
+      <p class="text-sm font-semibold text-indigo-700">使い方</p>
+      <h2 class="text-2xl font-bold">やさしい投稿までの3ステップ</h2>
+      <div class="space-y-4">
+        <div class="p-4 bg-white border border-slate-100 rounded-xl shadow-sm">
+          <p class="text-sm font-semibold text-indigo-700">Step 1</p>
+          <p class="text-base font-semibold">掲示板を作成</p>
+          <p class="text-sm text-slate-600">テーマを決めて新しい掲示板を立ち上げます。</p>
+        </div>
+        <div class="p-4 bg-white border border-slate-100 rounded-xl shadow-sm">
+          <p class="text-sm font-semibold text-indigo-700">Step 2</p>
+          <p class="text-base font-semibold">投稿するとAIが整形</p>
+          <p class="text-sm text-slate-600">原文から「優しい世界」版を自動生成。原文も保持します。</p>
+        </div>
+        <div class="p-4 bg-white border border-slate-100 rounded-xl shadow-sm">
+          <p class="text-sm font-semibold text-indigo-700">Step 3</p>
+          <p class="text-base font-semibold">読む人がモードを選択</p>
+          <p class="text-sm text-slate-600">原文／優しい世界を切り替えながら、安心して読んでもらえます。</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="space-y-6 p-6 bg-white border border-indigo-100 rounded-2xl shadow-sm text-center">
+      <p class="text-sm font-semibold text-indigo-700">はじめての方へ</p>
+      <h2 class="text-2xl font-bold">今すぐ「優しい世界」を試してみませんか？</h2>
+      <p class="text-sm text-slate-600">無料で登録して、原文と優しい文の両方を安全に共有できます。</p>
+      <div class="flex flex-wrap justify-center gap-3">
+        <%= link_to "新規登録", new_user_registration_path, class: "px-6 py-3 rounded-lg bg-indigo-600 text-white font-semibold hover:bg-indigo-700 transition" %>
+        <%= link_to "ログイン", new_user_session_path, class: "px-6 py-3 rounded-lg border border-slate-200 text-slate-700 font-semibold hover:bg-slate-50 transition" %>
+      </div>
+    </section>
+
+  </div>
+</div>
