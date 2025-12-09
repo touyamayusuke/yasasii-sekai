@@ -10,9 +10,12 @@
   </head>
 
   <body class="bg-gray-50 min-h-screen">
-    <header class="bg-white border-b">
-      <div class="flex items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
-        <%= link_to "優しい世界", root_path, class: "text-lg font-semibold whitespace-nowrap" %>
+    <header class="bg-white">
+      <div class="flex items-center justify-between px-4 py-1 sm:px-6 lg:px-8">
+        <%= link_to root_path, class: "flex items-center gap-2" do %>
+          <%= image_tag "logo.png", alt: "優しい世界", class: "h-20 w-auto" %>
+          <span class="text-lg font-semibold whitespace-nowrap hidden sm:inline">優しい世界</span>
+        <% end %>
 
         <nav class="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4 text-xs sm:text-sm">
           <% if user_signed_in? %>
@@ -34,5 +37,30 @@
         <%= yield %>
       </div>
     </main>
+
+    <footer class="bg-white border-t mt-12">
+      <div class="px-4 py-8 sm:px-6 lg:px-8">
+        <div class="max-w-3xl mx-auto">
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-8 mb-8">
+            <div>
+              <h3 class="font-semibold mb-4">法務</h3>
+              <ul class="space-y-2 text-sm text-gray-600">
+                <li><%= link_to "利用規約", "#", class: "hover:text-gray-900 underline" %></li>
+                <li><%= link_to "プライバシーポリシー", "#", class: "hover:text-gray-900 underline" %></li>
+              </ul>
+            </div>
+            <div>
+              <h3 class="font-semibold mb-4">フォロー</h3>
+              <ul class="space-y-2 text-sm text-gray-600">
+                <li><a href="#" target="_blank" rel="noopener" class="hover:text-gray-900 underline">Twitter</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="border-t pt-8 text-center text-sm text-gray-500">
+            <p>&copy; 2025 優しい世界. All rights reserved.</p>
+          </div>
+        </div>
+      </div>
+    </footer>
   </body>
 </html>
