@@ -6,7 +6,7 @@
         <p class="whitespace-pre-wrap text-sm sm:text-base break-words" data-gentle-mode-target="gentle" style="display:none;"><%= post.gentle_body.presence || '（優しい文がありません）' %></p>
       </div>
       <p class="text-xs text-gray-500 mt-1">
-        by <%= post.user.email %> / <%= l(post.created_at, format: :short) %>
+        by <%= post.user.name || post.user.email %> / <%= l(post.created_at, format: :short) %>
       </p>
     </div>
     <% if current_user == post.user %>

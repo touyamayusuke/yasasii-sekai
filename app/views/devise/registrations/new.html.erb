@@ -2,8 +2,12 @@
   <h2 class="text-2xl font-bold mb-6 text-center text-indigo-700">新規登録</h2>
   <%= form_with model: @user, url: registration_path(:user), class: "space-y-4" do |f| %>
     <div>
+      <%= f.label :name, "ユーザー名", class: "block mb-1 text-sm font-medium" %>
+      <%= f.text_field :name, autofocus: true, required: true, class: "w-full border rounded px-3 py-2" %>
+    </div>
+    <div>
       <%= f.label :email, "メールアドレス", class: "block mb-1 text-sm font-medium" %>
-      <%= f.email_field :email, autofocus: true, required: true, class: "w-full border rounded px-3 py-2" %>
+      <%= f.email_field :email, required: true, class: "w-full border rounded px-3 py-2" %>
     </div>
     <div>
       <%= f.label :password, "パスワード", class: "block mb-1 text-sm font-medium" %>

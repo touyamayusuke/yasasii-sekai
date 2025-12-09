@@ -15,11 +15,11 @@ User.destroy_all
 
 puts "ユーザーを作成中..."
 users = [
-  User.create!(email: "demo@example.com", password: "password", password_confirmation: "password"),
-  User.create!(email: "taro@example.com", password: "password", password_confirmation: "password"),
-  User.create!(email: "hanako@example.com", password: "password", password_confirmation: "password"),
-  User.create!(email: "satoshi@example.com", password: "password", password_confirmation: "password"),
-  User.create!(email: "yuki@example.com", password: "password", password_confirmation: "password")
+  User.create!(name: "デモユーザー", email: "demo@example.com", password: "password", password_confirmation: "password"),
+  User.create!(name: "太郎", email: "taro@example.com", password: "password", password_confirmation: "password"),
+  User.create!(name: "花子", email: "hanako@example.com", password: "password", password_confirmation: "password"),
+  User.create!(name: "智", email: "satoshi@example.com", password: "password", password_confirmation: "password"),
+  User.create!(name: "ユキ", email: "yuki@example.com", password: "password", password_confirmation: "password")
 ]
 puts "✓ #{users.count}人のユーザーを作成しました"
 
