@@ -1,11 +1,40 @@
-<%= link_to "掲示板を新しくを作る", new_board_path, class: "px-6 py-3 rounded bg-indigo-600 text-white text-lg font-semibold block mb-8 w-fit" %>
-
-<h1 class="text-xl font-bold mb-4">掲示板一覧</h1>
-
-<div class="space-y-2">
-  <% @boards.each do |b| %>
-    <div class="p-3 bg-white border rounded">
-      <%= link_to b.title, board_path(b), class: "text-indigo-700 underline" %>
+<div data-controller="gentle-mode-all">
+  <div class="mb-6 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+    <%= link_to "掲示板を新しくを作る", new_board_path, class: "px-4 sm:px-6 py-2 sm:py-3 rounded bg-slate-600 text-white text-sm sm:text-base font-semibold w-fit" %>
+    
+    <div class="flex gap-2 text-xs sm:text-sm">
+      <button type="button" data-action="gentle-mode-all#showOriginal" class="px-2 sm:px-3 py-1 bg-slate-200 rounded cursor-pointer hover:bg-slate-300">原文モード</button>
+      <button type="button" data-action="gentle-mode-all#showGentle" class="px-2 sm:px-3 py-1 bg-orange-200 rounded cursor-pointer hover:bg-orange-300">優しい世界モード</button>
     </div>
-  <% end %>
+  </div>
+
+  <h1 class="text-lg sm:text-xl font-bold mb-4 whitespace-nowrap">掲示板一覧</h1>
+
+  <div class="space-y-6">
+    <% @boards.each do |board| %>
+      <div class="p-4 bg-white border rounded-lg shadow-sm">
+        <div class="mb-3 pb-3 border-b">
+          <%= link_to board.title, board_path(board), class: "text-xl font-semibold text-indigo-700 hover:text-indigo-900" %>
+          <p class="text-xs text-slate-500 mt-1"><%= board.posts.count %>件の投稿</p>
+        </div>
+        
+        <% if board.posts.any? %>
+          <div class="space-y-2">
+            <% board.posts.order(created_at: :desc).limit(3).each do |post| %>
+              <div class="p-3 bg-slate-50 rounded border border-slate-100" data-gentle-mode-target="post">
+                <p class="text-xs text-slate-500 mb-1"><%= post.user&.email || "匿名" %></p>
+                <p class="text-sm whitespace-pre-wrap" data-gentle-mode-target="original"><%= post.body %></p>
+                <p class="text-sm whitespace-pre-wrap" data-gentle-mode-target="gentle" style="display:none;"><%= post.gentle_body.presence || '（優しい文がありません）' %></p>
+              </div>
+            <% end %>
+            <% if board.posts.count > 3 %>
+              <p class="text-xs text-slate-500 text-center mt-2">他 <%= board.posts.count - 3 %>件</p>
+            <% end %>
+          </div>
+        <% else %>
+          <p class="text-sm text-slate-400 text-center py-4">まだ投稿がありません</p>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
 </div>

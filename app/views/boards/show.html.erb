@@ -1,8 +1,10 @@
 
-<div data-controller="gentle-mode-all" class="mb-4 flex gap-2 items-center">
-  <h1 class="text-xl font-bold"><%= @board.title %></h1>
-  <button type="button" data-action="gentle-mode-all#showOriginal" class="px-2 py-1 text-xs bg-gray-200 rounded cursor-pointer hover:bg-gray-300">原文モード</button>
-  <button type="button" data-action="gentle-mode-all#showGentle" class="px-2 py-1 text-xs bg-green-200 rounded cursor-pointer hover:bg-green-300">優しい世界モード</button>
+<div data-controller="gentle-mode-all" class="mb-4 flex flex-col sm:flex-row sm:gap-4 sm:items-center">
+  <h1 class="text-lg sm:text-xl font-bold flex-1"><%= @board.title %></h1>
+  <div class="flex gap-2 text-xs sm:text-sm mt-2 sm:mt-0">
+    <button type="button" data-action="gentle-mode-all#showOriginal" class="px-2 sm:px-3 py-1 bg-slate-200 rounded cursor-pointer hover:bg-gray-300">原文モード</button>
+    <button type="button" data-action="gentle-mode-all#showGentle" class="px-2 sm:px-3 py-1 bg-orange-200 rounded cursor-pointer hover:bg-orange-300">優しい世界モード</button>
+  </div>
 </div>
 
 <div class="space-y-2 mb-6" id="posts">

@@ -3,7 +3,7 @@ class BoardsController < ApplicationController
   before_action :authenticate_user!, except: [ :index, :show ]
 
   def index
-    @boards = Board.order(created_at: :desc)
+    @boards = Board.includes(:posts).order(created_at: :desc)
   end
 
   def show
